@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+
+.form_head {
+  background:
+    /* grid pattern */
+    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    /* top color → bottom white gradient */
+    linear-gradient(to bottom, #e0e7ff 0%, #ffffff 100%);
+
+  background-size: 40px 40px, 40px 40px, cover;
+  background-repeat: repeat, repeat, no-repeat;
+  background-position: top left, top left, top;
+}
+
+@layer utilities {
+  @media (min-width: 1400px) {
+    .px-safe {
+      padding-left: 120px;
+      padding-right: 120px;
+    
+    }
+  }
+}
+
+@media(min-width:1600px){
+  .large-left{
+    left:23%
+  }
+  .large-right{
+    right:21%
+  }
+}
+
+.scrollbar::-webkit-scrollbar {
+  height: 6px; /* horizontal scrollbar height */
+  width: 6px;  /* vertical scrollbar width */
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(100,100,100,0.5);
+  border-radius: 3px;
+}
+
+input[type="search" i]::-webkit-search-cancel-button {
+
+ 
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+
+  /* Custom icon with your own color (example: white cross on gray circle) */
+  
+}
+
+

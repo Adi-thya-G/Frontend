@@ -12,9 +12,9 @@ interface Props extends ComponentProps<"div">{
   button:ReactNode
 }
 
-function PricingCard({Plans_types,description,amount,point,className,button}:Props) {
+function PricingCard({Plans_types,description,amount,point,className,button,...props}:Props) {
   return (
-   <div className={`${className}`}>
+   <div className={`${className}`} {...props}>
         <div className='w-full flex justify-center'>
         <div className=' flex flex-col gap-3 p-2 py-3'>
 <div className='flex px-5 py-3'>
@@ -24,11 +24,11 @@ function PricingCard({Plans_types,description,amount,point,className,button}:Pro
   <h5 className='text-xl font-semibold'>{Plans_types}</h5>
   <p className='font-sans font-semibold text-xs '>{description}</p>
 </div>
-<div className='relative px-5 flex place-items-center py-1'>
-  <div className='absolute top-0 font-semibold text-xl'>
+<div className='relative px-5 flex place-items-center  py-1'>
+  <div className='font-semibold text-xl'>
 ₹
   </div>
-  <h4 className='text-[27px] font-bold px-3'>
+  <h4 className='text-[27px] font-bold px-1'>
 {amount.toFixed(2)}
   </h4>
   <span className='text-xs font-semibold text-gray-600'>/month</span>

@@ -1,5 +1,5 @@
 import { axiosInstance } from "./axios";
-
+import {type PayementIntialize}from "./type";
 export const login=async(email:string,password:string)=>{
   try {
    const response=await  axiosInstance.post("user/login",{email:email,
@@ -25,3 +25,20 @@ export const DeleteDocument=async(id:string)=>{
     
   }
 }
+
+export const PayemntIntailized=async(formdata:PayementIntialize)=>{
+    return await axiosInstance.post(`payments/initailze`,formdata)
+ 
+}
+
+
+//GET DATA
+
+export const PlansDetails=async()=>{
+  return await axiosInstance.get("plans/getData")
+}
+
+export const paymentstatus=async()=>{
+   return await axiosInstance.get('payments/status')
+
+   }

@@ -5,7 +5,8 @@ import {
   
 } from "recharts";
 import useBreakPoint from "../utilis/ScreenHelper";
-
+import {paymentstatus} from '../utilis/api'
+import { useEffect } from "react";
 const data = [
   { day: "Mon", queries: 30 },
   { day: "Tue", queries: 45 },
@@ -16,6 +17,14 @@ const data = [
   { day: "Sun", queries: 50 },
 ];
 export default function Dashboard() {
+
+useEffect(() => {
+  paymentstatus()
+    .then(res => console.log(res))
+    .catch(err => console.error(err));
+}, []);
+
+
 
   const bp=useBreakPoint()
   return (
